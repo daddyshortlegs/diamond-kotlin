@@ -52,19 +52,11 @@ class DiamondMaker {
     }
 
     fun generateTop(letter: String): String {
-
         val index = letterWrapper.getIndex(letter)
 
         var result = ""
         for (i in 1..index) {
-            var line = generateLeadingSpaces(i, letter)
-
-            val char = letterWrapper.getLetter(i)
-            line += char
-            line += generateMiddleSpaces(i)
-            line += char + "\n"
-
-            result += line
+            result += generateLine(i, letter, result)
         }
 
         return result
@@ -75,17 +67,19 @@ class DiamondMaker {
 
         var result = ""
         for (i in (index-1) downTo 1) {
-            var line = generateLeadingSpaces(i, letter)
-
-            val char = letterWrapper.getLetter(i)
-            line += char
-            line += generateMiddleSpaces(i)
-            line += char + "\n"
-
-            result += line
+            result += generateLine(i, letter, result)
         }
 
         return result
+    }
+
+    private fun generateLine(i: Int, letter: String, result: String): String {
+        val char = letterWrapper.getLetter(i)
+        var line = generateLeadingSpaces(i, letter)
+        line += char
+        line += generateMiddleSpaces(i)
+        line += char + "\n"
+        return line
     }
 
 }
