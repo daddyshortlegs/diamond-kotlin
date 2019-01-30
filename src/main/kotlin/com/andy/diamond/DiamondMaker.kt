@@ -1,10 +1,12 @@
 package com.andy.diamond
 
 class DiamondMaker {
+
+    private val letterWrapper = LetterWrapper()
+
     fun create(letter: String): String {
         if (letter == "A") return letter
 
-        val letterWrapper = LetterWrapper()
 
         val index = letterWrapper.getIndex(letter)
 
@@ -28,7 +30,6 @@ class DiamondMaker {
     }
 
     fun getLeadingNumberOfSpacesFor(index: Int, letter: String): Int {
-        val letterWrapper = LetterWrapper()
         val indexOfLetter = letterWrapper.getIndex(letter)
         return indexOfLetter - index
     }
@@ -51,12 +52,29 @@ class DiamondMaker {
     }
 
     fun generateTop(letter: String): String {
-        val letterWrapper = LetterWrapper()
 
         val index = letterWrapper.getIndex(letter)
 
         var result = ""
         for (i in 1..index) {
+            var line = generateLeadingSpaces(i, letter)
+
+            val char = letterWrapper.getLetter(i)
+            line += char
+            line += generateMiddleSpaces(i)
+            line += char + "\n"
+
+            result += line
+        }
+
+        return result
+    }
+
+    fun generateBottom(letter: String): String {
+        val index = letterWrapper.getIndex(letter)
+
+        var result = ""
+        for (i in (index-1) downTo 1) {
             var line = generateLeadingSpaces(i, letter)
 
             val char = letterWrapper.getLetter(i)

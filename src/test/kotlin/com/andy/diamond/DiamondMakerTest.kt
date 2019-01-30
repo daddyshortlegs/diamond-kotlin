@@ -90,4 +90,15 @@ class DiamondMakerTest {
 
         assertEquals(expected, top)
     }
+
+    @Test
+    fun `generate bottom half`() {
+        val top: String = diamondMaker.generateBottom("D")
+        val expected =
+                    " C   C\n" +
+                    "  B B\n"
+
+        assertEquals(expected, top)
+    }
+
 }
