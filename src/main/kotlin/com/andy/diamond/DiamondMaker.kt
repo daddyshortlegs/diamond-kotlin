@@ -46,7 +46,7 @@ class DiamondMaker {
 
         var result = ""
         for (i in 1..index) {
-            result += generateLine(i, letter, result)
+            result += generateLine(i, letter)
         }
 
         return result
@@ -57,13 +57,13 @@ class DiamondMaker {
 
         var result = ""
         for (i in (index-1) downTo 1) {
-            result += generateLine(i, letter, result)
+            result += generateLine(i, letter)
         }
 
         return result
     }
 
-    private fun generateLine(i: Int, letter: String, result: String): String {
+    private fun generateLine(i: Int, letter: String): String {
         val char = letterWrapper.getLetter(i)
         var line = generateLeadingSpaces(i, letter)
         line += char
