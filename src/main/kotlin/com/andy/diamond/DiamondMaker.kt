@@ -4,9 +4,9 @@ class DiamondMaker {
     fun create(letter: String): String {
         if (letter == "A") return letter
 
-        val letterWrapper = LetterWrapper(letter)
+        val letterWrapper = LetterWrapper()
 
-        val index = letterWrapper.getIndex()
+        val index = letterWrapper.getIndex(letter)
 
         var result = ""
         for (i in 1..index) {
@@ -28,8 +28,8 @@ class DiamondMaker {
     }
 
     fun getLeadingNumberOfSpacesFor(index: Int, letter: String): Int {
-        val letterWrapper = LetterWrapper(letter)
-        val indexOfLetter = letterWrapper.getIndex()
+        val letterWrapper = LetterWrapper()
+        val indexOfLetter = letterWrapper.getIndex(letter)
         return indexOfLetter - index
     }
 
@@ -48,6 +48,19 @@ class DiamondMaker {
 
     fun getMiddleNumberOfSpaces(index: Int): Int {
         return (index - 1) * 2 + 1
+    }
+
+    fun generateTop(letter: String): String {
+        val letterWrapper = LetterWrapper()
+
+        val index = letterWrapper.getIndex(letter)
+
+        for (i in 1..index) {
+            var line = generateLeadingSpaces(i, letter)
+
+        }
+
+        return ""
     }
 
 }
