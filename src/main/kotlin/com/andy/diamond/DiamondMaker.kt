@@ -82,4 +82,8 @@ class DiamondMaker {
         return line
     }
 
+    fun generatePoint(letter: String): String {
+        return generateLeadingSpaces(0, letter) + "A\n"
+    }
+
 }

@@ -80,6 +80,13 @@ class DiamondMakerTest {
         assertEquals("         ", diamondMaker.generateMiddleSpaces(5))
     }
 
+
+    @Test
+    fun `generate top point`() {
+        val top: String = diamondMaker.generatePoint("D")
+        assertEquals("   A\n", top)
+    }
+
     @Test
     fun `generate top half`() {
         val top: String = diamondMaker.generateTop("D")
