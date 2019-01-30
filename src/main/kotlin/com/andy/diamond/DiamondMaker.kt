@@ -13,10 +13,14 @@ class DiamondMaker {
 
     fun getLeadingNumberOfSpacesFor(index: Int, letter: String): Int {
         val letterWrapper = LetterWrapper(letter)
-        val index1 = letterWrapper.getIndex()
+        val indexOfLetter = letterWrapper.getIndex()
+        return indexOfLetter - index
+    }
 
-        println("index = $index, letter = $letter, index of letter = $index1")
-        return index1 - index
+    fun getMiddleNumberOfSpaces(index: Int, letter: String): Int {
+        // (index - 1) * 2 + 1
+
+        return (index - 1) * 2 + 1
     }
 
 }

@@ -41,32 +41,30 @@ class DiamondMakerTest {
     }
 
     @Test
-    fun `get leading number of spaces for index 3 for letter D`() {
+    fun `get leading number of spaces for differing indexes for letter D`() {
+        assertEquals(0, diamondMaker.getLeadingNumberOfSpacesFor(3, "D"))
+        assertEquals(1, diamondMaker.getLeadingNumberOfSpacesFor(2, "D"))
+        assertEquals(2, diamondMaker.getLeadingNumberOfSpacesFor(1, "D"))
+    }
+
+    @Test
+    fun `get number of spaces in middle of line for differeing indexes for letter D`() {
         val expected =
-            "   A\n" +
-            "  B B\n" +
-            " C   C\n" +
-            "D     D\n" +
-            " C   C\n" +
-            "  B B\n" +
-            "   A\n"
+                    "    A\n" +
+                    "   B B\n" +
+                    "  C   C\n"
+                    " D     D\n"
+                    "E       E\n"
+                    " C   C\n"
+                    "  B B\n" +
+                    "   A\n"
+        // (index - 1) * 2 + 1
 
 
-        val number: Int = diamondMaker.getLeadingNumberOfSpacesFor(3, "D")
-        assertEquals(0, number)
+        assertEquals(5, diamondMaker.getMiddleNumberOfSpaces(3, "D"))
+        assertEquals(7, diamondMaker.getMiddleNumberOfSpaces(4, "D"))
+        assertEquals(9, diamondMaker.getMiddleNumberOfSpaces(5, "D"))
+
     }
-
-    @Test
-    fun `get leading number of spaces for index 2 for letter D`() {
-        val number: Int = diamondMaker.getLeadingNumberOfSpacesFor(2, "D")
-        assertEquals(1, number)
-    }
-
-    @Test
-    fun `get leading number of spaces for index 1 for letter D`() {
-        val number: Int = diamondMaker.getLeadingNumberOfSpacesFor(1, "D")
-        assertEquals(2, number)
-    }
-
 
 }
