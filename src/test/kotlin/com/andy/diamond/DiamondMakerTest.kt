@@ -26,7 +26,6 @@ class DiamondMakerTest {
     }
 
     @Test
-    @Ignore
     fun `create C`() {
         val result = diamondMaker.create("C")
 

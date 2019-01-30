@@ -7,21 +7,11 @@ class DiamondMaker {
     fun create(letter: String): String {
         if (letter == "A") return letter
 
-
-        val index = letterWrapper.getIndex(letter)
-
-        var result = ""
-        for (i in 1..index) {
-            val spaces = getLeadingNumberOfSpacesFor(i, letter)
-
-
-
-        }
-
-
-        return " A\n" +
-                "B B\n" +
-                " A\n"
+        var result = generatePoint(letter)
+        result+=generateTop(letter)
+        result+=generateBottom(letter)
+        result+=generatePoint(letter)
+        return result
     }
 
     fun generateLeadingSpaces(index: Int, letter: String): String {
