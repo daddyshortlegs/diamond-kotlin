@@ -68,16 +68,16 @@ class DiamondMakerTest {
         // (index - 1) * 2 + 1
 
 
-        assertEquals(5, diamondMaker.getMiddleNumberOfSpaces(3, "D"))
-        assertEquals(7, diamondMaker.getMiddleNumberOfSpaces(4, "D"))
-        assertEquals(9, diamondMaker.getMiddleNumberOfSpaces(5, "D"))
+        assertEquals(5, diamondMaker.getMiddleNumberOfSpaces(3))
+        assertEquals(7, diamondMaker.getMiddleNumberOfSpaces(4))
+        assertEquals(9, diamondMaker.getMiddleNumberOfSpaces(5))
     }
 
     @Test
     fun `generate middle spaces`() {
-        assertEquals("     ", diamondMaker.generateMiddleSpaces(3, "D"))
-        assertEquals("       ", diamondMaker.generateMiddleSpaces(4, "D"))
-        assertEquals("         ", diamondMaker.generateMiddleSpaces(5, "D"))
+        assertEquals("     ", diamondMaker.generateMiddleSpaces(3))
+        assertEquals("       ", diamondMaker.generateMiddleSpaces(4))
+        assertEquals("         ", diamondMaker.generateMiddleSpaces(5))
     }
 
 }

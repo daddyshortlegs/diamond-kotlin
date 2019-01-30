@@ -33,8 +33,8 @@ class DiamondMaker {
         return indexOfLetter - index
     }
 
-    fun generateMiddleSpaces(index: Int, letter: String): String {
-        val numberOfSpaces = getMiddleNumberOfSpaces(index, letter)
+    fun generateMiddleSpaces(index: Int): String {
+        val numberOfSpaces = getMiddleNumberOfSpaces(index)
         return generateSpaces(numberOfSpaces)
     }
 
@@ -46,7 +46,7 @@ class DiamondMaker {
         return result
     }
 
-    fun getMiddleNumberOfSpaces(index: Int, letter: String): Int {
+    fun getMiddleNumberOfSpaces(index: Int): Int {
         return (index - 1) * 2 + 1
     }
 
