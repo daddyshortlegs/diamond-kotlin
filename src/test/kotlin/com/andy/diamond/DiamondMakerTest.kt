@@ -81,7 +81,6 @@ class DiamondMakerTest {
     }
 
     @Test
-    @Ignore
     fun `generate top half`() {
         val top: String = diamondMaker.generateTop("D")
         val expected =

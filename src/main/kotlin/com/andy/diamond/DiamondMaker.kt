@@ -55,12 +55,19 @@ class DiamondMaker {
 
         val index = letterWrapper.getIndex(letter)
 
+        var result = ""
         for (i in 1..index) {
             var line = generateLeadingSpaces(i, letter)
 
+            val char = letterWrapper.getLetter(i)
+            line += char
+            line += generateMiddleSpaces(i)
+            line += char + "\n"
+
+            result += line
         }
 
-        return ""
+        return result
     }
 
 }
