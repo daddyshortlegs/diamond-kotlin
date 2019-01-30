@@ -13,4 +13,18 @@ class DiamondMakerTest {
 
         assertEquals("A", result)
     }
+
+    @Test
+    fun `create B`() {
+        val diamondMaker = DiamondMaker()
+
+        val result = diamondMaker.create("B")
+
+        val expected = " A\n" +
+                "B B\n" +
+                " A\n"
+
+        assertEquals(expected, result)
+    }
+
 }
