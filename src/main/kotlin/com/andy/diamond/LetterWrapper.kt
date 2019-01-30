@@ -6,4 +6,9 @@ class LetterWrapper {
         return char.toInt() - 65
     }
 
+    fun getLetter(i: Int): String {
+        val charValue = i + 65
+        return charValue.toChar().toString()
+    }
+
 }

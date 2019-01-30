@@ -4,23 +4,18 @@ import org.junit.Assert.*
 import org.junit.Test
 
 class LetterWrapperTest {
+    private val letterWrapper = LetterWrapper()
 
     @Test
-    fun `should get index of 0 for letter A`() {
-        val letterWrapper = LetterWrapper()
+    fun `should get correct index for letter`() {
         assertEquals(0, letterWrapper.getIndex("A"))
-    }
-
-    @Test
-    fun `should get index of 25 for letter Z`() {
-        val letterWrapper = LetterWrapper()
         assertEquals(25, letterWrapper.getIndex("Z"))
     }
 
     @Test
-    fun `should get A for index 65`() {
-        val letterWrapper = LetterWrapper()
-        //assertEquals(0, letterWrapper.getIndex(letter))
-
+    fun `should get correct character for index`() {
+        assertEquals("A", letterWrapper.getLetter(0))
+        assertEquals("Z", letterWrapper.getLetter(25))
     }
+
 }
