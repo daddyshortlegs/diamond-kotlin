@@ -33,7 +33,7 @@ class DiamondMakerTest {
         val expected =
                 "  A\n" +
                 " B B\n" +
-                "C   C\b"
+                "C   C\n" +
                 " B B\n" +
                 "  A\n"
 
@@ -45,6 +45,13 @@ class DiamondMakerTest {
         assertEquals(0, diamondMaker.getLeadingNumberOfSpacesFor(3, "D"))
         assertEquals(1, diamondMaker.getLeadingNumberOfSpacesFor(2, "D"))
         assertEquals(2, diamondMaker.getLeadingNumberOfSpacesFor(1, "D"))
+    }
+
+    @Test
+    fun `generate leading spaces`() {
+        assertEquals("", diamondMaker.generateLeadingSpaces(3, "D"))
+        assertEquals(" ", diamondMaker.generateLeadingSpaces(2, "D"))
+        assertEquals("  ", diamondMaker.generateLeadingSpaces(1, "D"))
     }
 
     @Test
@@ -64,7 +71,6 @@ class DiamondMakerTest {
         assertEquals(5, diamondMaker.getMiddleNumberOfSpaces(3, "D"))
         assertEquals(7, diamondMaker.getMiddleNumberOfSpaces(4, "D"))
         assertEquals(9, diamondMaker.getMiddleNumberOfSpaces(5, "D"))
-
     }
 
 }
