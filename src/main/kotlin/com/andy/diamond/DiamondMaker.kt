@@ -17,20 +17,17 @@ class DiamondMaker {
 
     fun generateTop(letter: String): String {
         val index = letterWrapper.getIndex(letter)
-
-        var result = ""
-        for (i in 1.rangeTo(index)) {
-            result += generateLine(i, letter)
-        }
-
-        return result
+        return generate(1.rangeTo(index), letter)
     }
 
     fun generateBottom(letter: String): String {
         val index = letterWrapper.getIndex(letter)
+        return generate((index - 1).downTo(1), letter)
+    }
 
+    private fun generate(rangeTo: IntProgression, letter: String): String {
         var result = ""
-        for (i in (index - 1).downTo(1)) {
+        for (i in rangeTo) {
             result += generateLine(i, letter)
         }
 
