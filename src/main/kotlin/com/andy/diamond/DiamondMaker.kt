@@ -6,12 +6,7 @@ class DiamondMaker {
 
     fun create(letter: String): String {
         if (letter == "A") return letter
-
-        var result = generatePoint(letter)
-        result+=generateTop(letter)
-        result+=generateBottom(letter)
-        result+=generatePoint(letter)
-        return result
+        return generatePoint(letter) + generateTop(letter) + generateBottom(letter) + generatePoint(letter)
     }
 
     fun generatePoint(letter: String): String = generateLeadingSpaces(0, letter) + "A\n"
@@ -44,11 +39,7 @@ class DiamondMaker {
 
     private fun generateLine(i: Int, letter: String): String {
         val char = letterWrapper.getLetter(i)
-        var line = generateLeadingSpaces(i, letter)
-        line += char
-        line += generateMiddleSpaces(i)
-        line += char + "\n"
-        return line
+        return generateLeadingSpaces(i, letter) + char + generateMiddleSpaces(i) + char + "\n"
     }
 
     fun generateMiddleSpaces(index: Int): String = " ".repeat(getMiddleNumberOfSpaces(index))
