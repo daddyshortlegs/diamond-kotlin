@@ -19,7 +19,7 @@ class DiamondMaker {
         val index = letterWrapper.getIndex(letter)
 
         var result = ""
-        for (i in 1..index) {
+        for (i in 1.rangeTo(index)) {
             result += generateLine(i, letter)
         }
 
@@ -30,7 +30,7 @@ class DiamondMaker {
         val index = letterWrapper.getIndex(letter)
 
         var result = ""
-        for (i in (index-1) downTo 1) {
+        for (i in (index - 1).downTo(1)) {
             result += generateLine(i, letter)
         }
 
