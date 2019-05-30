@@ -15,15 +15,9 @@ class DiamondMaker {
 
     fun getLeadingNumberOfSpacesFor(index: Int, letter: String): Int = letterWrapper.getIndex(letter) - index
 
-    fun generateTop(letter: String): String {
-        val index = letterWrapper.getIndex(letter)
-        return generate(1.rangeTo(index), letter)
-    }
+    fun generateTop(letter: String): String = generate(1.rangeTo(letterWrapper.getIndex(letter)), letter)
 
-    fun generateBottom(letter: String): String {
-        val index = letterWrapper.getIndex(letter)
-        return generate((index - 1).downTo(1), letter)
-    }
+    fun generateBottom(letter: String): String = generate((letterWrapper.getIndex(letter) - 1).downTo(1), letter)
 
     private fun generate(rangeTo: IntProgression, letter: String): String {
         var result = ""
