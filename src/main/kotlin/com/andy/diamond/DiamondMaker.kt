@@ -19,14 +19,8 @@ class DiamondMaker {
 
     fun generateBottom(letter: String): String = generate((letterWrapper.getIndex(letter) - 1).downTo(1), letter)
 
-    private fun generate(rangeTo: IntProgression, letter: String): String {
-        var result = ""
-        for (i in rangeTo) {
-            result += generateLine(i, letter)
-        }
-
-        return result
-    }
+    private fun generate(rangeTo: IntProgression, letter: String): String
+            = rangeTo.fold("") { result, i -> result + generateLine(i, letter) }
 
     private fun generateLine(i: Int, letter: String): String {
         val char = letterWrapper.getLetter(i)
